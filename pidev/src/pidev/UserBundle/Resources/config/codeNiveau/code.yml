@@ -1,0 +1,60 @@
+Lister_codeRoute:
+    path:     /listerCode
+    defaults: { _controller: pidevUserBundle:CodeRoute:Lister }
+Modifier_codeRoute:
+    path:     /modifierCode
+    defaults: { _controller: pidevUserBundle:CodeRoute:Modifier }
+edit_test:
+    path:     /editTest/{id}
+    defaults: { _controller: pidevUserBundle:CodeRoute:editTest }
+Supprimer_codeRoute:
+    path:     /supprimerCode
+    defaults: { _controller: pidevUserBundle:CodeRoute:Supprimer }
+Delete_test:
+    path:     /deleteTest/{id}
+    defaults: { _controller: pidevUserBundle:CodeRoute:delete }
+Ajouter_codeRoute:
+    path:     /ajouterCode
+    defaults: { _controller: pidevUserBundle:CodeRoute:Ajouter }
+code_index:
+    path:     /indexCode
+    defaults: { _controller: pidevUserBundle:CodeRoute:index }
+Statistique1_codeRoute:
+    path:     /statistiques
+    defaults: { _controller: pidevUserBundle:CodeRoute:Statistiques }
+Resultat_Succes_niveau1:
+    path:     /resultatNv1Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv1Succ }
+Resultat_Succes_niveau2:
+    path:     /resultatNv2Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv2Succ }
+Resultat_Succes_niveau3:
+    path:     /resultatNv3Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv3Succ }
+Resultat_Succes_niveau4:
+    path:     /resultatNv4Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv4Succ }
+Resultat_Succes_niveau5:
+    path:     /resultatNv5Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv5Succ }
+Resultat_Succes_niveau6:
+    path:     /resultatNv6Succ
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv6Succ }
+Resultat_Echec_niveau1:
+    path:     /resultatNv1Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv1Ech }
+Resultat_Echec_niveau2:
+    path:     /resultatNv2Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv2Ech }
+Resultat_Echec_niveau3:
+    path:     /resultatNv3Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv3Ech }
+Resultat_Echec_niveau4:
+    path:     /resultatNv4Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv4Ech }
+Resultat_Echec_niveau5:
+    path:     /resultatNv5Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv5Ech }
+Resultat_Echec_niveau6:
+    path:     /resultatNv6Ech
+    defaults: { _controller: pidevUserBundle:CodeRoute:ResutalNv6Ech }

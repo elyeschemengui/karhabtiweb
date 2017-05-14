@@ -1,0 +1,71 @@
+annonces_index:
+    path:     /
+    defaults: { _controller: "pidevUserBundle:Annonces:index" }
+    methods:  GET
+admin_index:
+    path:     /admin/annonces
+    defaults: { _controller: "pidevUserBundle:Annonces:adminAnnonces" }
+    methods:  GET
+validation:
+    path:     /admin/validation
+    defaults: { _controller: "pidevUserBundle:Annonces:validationAdmin" }
+    methods:  GET
+
+
+annonces_show:
+    path:     /{id}/show
+    defaults: { _controller: "pidevUserBundle:Annonces:show" }
+    methods:  GET
+
+annonces_new:
+    path:     /User/new
+    defaults: { _controller: "pidevUserBundle:Annonces:new" }
+    methods:  [GET, POST]
+
+
+annonces_edit:
+    path:     /User/{id}/edit
+    defaults: { _controller: "pidevUserBundle:Annonces:edit" }
+    methods:  [GET, POST]
+
+annonces_delete:
+    path:     /User//{id}/delete
+    defaults: { _controller: "pidevUserBundle:Annonces:delete" }
+    methods:  DELETE
+valid:
+    path:    /admin/valid/{id}
+    defaults: { _controller: "pidevUserBundle:Annonces:valid" }
+    methods:  [GET, POST]
+annonce_Front:
+    path:    /annonceFront
+    defaults: { _controller: "pidevUserBundle:Annonces:annoncesFront" }
+show_admin:
+    path:    /admin/{id}/show
+    defaults: { _controller: "pidevUserBundle:Annonces:showadmin" }
+delet_annonce:
+    path:    /admin/delet/{id}
+    defaults: { _controller: "pidevUserBundle:Annonces:deletevalidation" }
+    methods:  [GET, POST]
+annoce_delete:
+    path:    /admin/delet/{id}
+    defaults: { _controller: "pidevUserBundle:Annonces:annoncedelete" }
+    methods:  [GET, POST]
+mesannonces:
+    path:    /User/mesannonces
+    defaults: { _controller: "pidevUserBundle:Annonces:mesannonces" }
+
+recherche:
+    path:    /recherche
+    defaults: { _controller: "pidevUserBundle:Annonces:recherche" }
+annonce_detail:
+    path:    /{id}/annoncedetail
+    defaults: { _controller: "pidevUserBundle:Annonces:annoncedetail" }
+notification:
+    path:    /notification
+    defaults: { _controller: "pidevUserBundle:Annonces:sendNotification" }
+
+annonce_Front1:
+    path:    /annonceFront1
+    defaults: { _controller: "pidevUserBundle:Annonces:annoncesFront1" }
+
+

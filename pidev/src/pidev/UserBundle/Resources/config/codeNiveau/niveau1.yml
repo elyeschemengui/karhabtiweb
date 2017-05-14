@@ -1,0 +1,18 @@
+UN_question1:
+    path:     /UNQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv1 }
+DEUX_question1:
+    path:     /DeuxQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv2 }
+TROIS_question1:
+    path:     /TroisQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv3 }
+QUATRE_question1:
+    path:     /QuatreQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv4 }
+CINQ_question1:
+    path:     /CinqQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv5 }
+SIX_question1:
+    path:     /SixQ1
+    defaults: { _controller: pidevUserBundle:niveauUN:question1Nv6 }

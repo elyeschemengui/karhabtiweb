@@ -1,0 +1,295 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <br><br><br><br><br><br><br><br><br>
+
+
+    <div class="promo-video-container alert fade in">
+        <div class="promo-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="promo-video-text">Play our promotion video and learn more</span>
+                        <a href="https://www.youtube.com/watch?v=pCspLo74BI8"  class="popup-youtube promo-video-link" rel="external"><i class="fa fa-play"></i></a>
+                        <span class="promo-video-text">You can make the world a better place</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="close" data-dismiss="alert">x</a>
+    </div>
+
+
+{% for i in annonces %}
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title">{{ i.tITRE }}</div>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('home') }}">Home</a></li>
+                        <li><a href="{{ path('annonce_Front') }}l">Cataloge</a></li>
+                        <li class="active">Product detail</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 car-detail-container">
+                <div class="slider-carousel flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="caption">
+                                <h2>{{ i.tITRE }}</h2>
+                                <p> engine : : <span class="highlite">{{ i.eNERGIE }}</span>.</p>
+                            </div>
+                            <a href="{{asset ('/images/' ~ i.image ~ ''  )}}" class="popup-link"><img src="{{asset ('/images/' ~ i.image ~ ''  )}}"  alt=""/></a>
+                        </li>
+                        <li>
+                            <div class="caption">
+                                <h2>{{ i.tITRE }}</h2>
+                                <p> engine : : <span class="highlite">{{ i.eNERGIE }}</span>.</p>
+                            </div>
+                            <a href="{{asset ('/images/' ~ i.image1 ~ ''  )}}" class="popup-link"><img src="{{asset ('/images/' ~ i.image1 ~ ''  )}}"  alt=""/></a>
+                        </li>
+                        <li>
+                            <div class="caption">
+                                <h2>{{ i.tITRE }}</h2>
+                                <p> engine : : <span class="highlite">{{ i.eNERGIE }}</span>.</p>
+                            </div>
+                            <a href="{{asset ('/images/' ~ i.image2 ~ ''  )}}" class="popup-link"><img src="{{asset ('/images/' ~ i.image2 ~ ''  )}}"  alt=""/></a>
+                        </li>
+                        <li>
+                            <div class="caption">
+                                <h2>{{ i.tITRE }}</h2>
+                                <p> engine : : <span class="highlite">{{ i.eNERGIE }}</span>.</p>
+                            </div>
+                            <a href="{{asset ('/images/' ~ i.image3 ~ ''  )}}" class="popup-link"><img src="{{asset ('/images/' ~ i.image3 ~ ''  )}}"  alt=""/></a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <div  class="carousel-slider flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="{{asset ('/images/' ~ i.image ~ ''  )}}"  alt=""/>
+
+                        </li>
+                        <li>
+                            <img src="{{asset ('/images/' ~ i.image1 ~ ''  )}}"  alt=""/>
+                        </li>
+                        <li>
+                            <img src="{{asset ('/images/' ~ i.image2 ~ ''  )}}"  alt=""/>
+                        </li>
+                        <li>
+                            <img src="{{asset ('/images/' ~ i.image3 ~ ''  )}}"  alt=""/>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                {% endfor %}
+                {% for i in annonces %}
+
+                <div class="title">
+                    Description
+                </div>
+                <p class="info-text">
+{{ i.dESCRIPITION }}                </p>
+
+
+                <ul class="nav nav-tabs responsive" id="myTab">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Tech. info</a></li>
+                </ul>
+                <div class="tab-content responsive">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Region:</strong> {{ i.region }}</li>
+                                    <li><strong>Energie:</strong> {{ i.eNERGIE }}</li>
+                                    <li><strong>Boite:</strong> {{ i.bOITE }}</li>
+                                    <li><strong>Cylindree:</strong> {{ i.cYLINDREE }}</li>
+                                    <li><strong>Date:</strong> {% if i.date %}{{ i.date|date('Y-m-d') }}{% endif %}</li>
+                                    <li><strong>Nombre De Cylindres:</strong> {{ i.NOMBREDECYLINDRES }}</li>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Puissance Fiscale:</strong> {{ i.pUISSANCEFISCALE }}</li>
+
+                                    <li><strong>Puissance:</strong> {{ i.pUISSANCEFISCALE }}</li>
+                                    <li><strong>Prix:</strong> {{ i.pRIX }} Dt</li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Engine:</strong> 2l</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                    <li><strong>Gear:</strong> manual</li>
+                                    <li><strong>Doors:</strong> 4</li>
+                                    <li><strong>Type:</strong> sedan</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Engine:</strong> 2l</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                    <li><strong>Gear:</strong> manual</li>
+                                    <li><strong>Doors:</strong> 4</li>
+                                    <li><strong>Type:</strong> sedan</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="tab3">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Engine:</strong> 2l</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                    <li><strong>Gear:</strong> manual</li>
+                                    <li><strong>Doors:</strong> 4</li>
+                                    <li><strong>Type:</strong> sedan</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-3">
+                                    <li><strong>Engine:</strong> 2l</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                    <li><strong>Gear:</strong> manual</li>
+                                    <li><strong>Doors:</strong> 4</li>
+                                    <li><strong>Type:</strong> sedan</li>
+                                    <li><strong>Horse power:</strong> 250</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                    {{ socialButtons() }}
+
+{% endfor %}
+                <div class="r-bg">
+                    <h3>Comments</h3>
+                    <div class="comments-container">
+                        {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'foo'} %}
+
+
+                    </div>
+                </div>
+
+            </div>
+{% for i in annonces %}
+            <div class="col-sm-4">
+                <div class="r-bg">
+                    <div class="widget">
+                        <h3>{{ i.tITRE }}</h3>
+                        <div class="car-detail-info">
+                            <div class="title">PriX: {{ i.pRIX }} Dt</div>
+                            <ul class="car-detail-info-list">
+                                <li><strong>Enrgie:</strong>{{ i.eNERGIE }}</li>
+                                <li><strong>Boite:</strong> {{ i.bOITE }}</li>
+                                <li><strong>Puissance Fiscale:</strong> {{ i.pUISSANCEFISCALE }}</li>
+                                <li><strong>Date:</strong> {% if i.date %}{{ i.date|date('Y-m-d') }}{% endif %}</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="r-bg">
+                    <div class="widget">
+                        <h3> contact</h3>
+                        <div class="car-detail-info">
+                            <ul class="car-detail-info-list">
+                                <li>Contact Person:<span>{{ i.user.username }}</span></li>
+                                <li>email:<span>{{ i.user.email }}</span></li>
+                                <li>Num_Tel:<span>{{ i.user.numTel }}</span></li>
+                                <li>code postal:<span>{{ i.user.codePostal }}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="r-bg">
+
+
+
+
+
+                <div class="r-bg">
+                    <div class="widget">
+                        <h3>Private Message to Dealer</h3>
+                        <form role="form">
+                            <div class="row">
+                                <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-12">
+                                    <label for="name11" class="label-small">Name</label>
+                                    <input type="text" class="form-control" id="name11" placeholder="Enter name">
+                                </div>
+                                <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-12">
+                                    <label for="email11" class="label-small">E-mail</label>
+                                    <input type="email" class="form-control" id="email11" placeholder="Enter email">
+                                </div>
+
+                                <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-12">
+                                    <label for="message22" class="label-small">Message</label>
+                                    <textarea class="form-control" id="message22" name="messag2" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+                                </div>
+
+
+                                <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-12">
+                                    <button type="submit" class="btn btn-default col-xs-12">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="r-bg">
+                    <div class="widget">
+                        <h3>Recent news</h3>
+                        {% for i in t | slice(0,3) %}
+                        <ul class="news-box-ul">
+                            <li>
+                <span class="image">
+                  <img src="{{asset ('/images/' ~ i.image ~ ''  )}}" alt="">
+                </span>
+                                <div class="table-content">
+                <span class="title">
+                    <a href="blog-detail.html">{{ i.tITRE }}</a>
+                </span>
+                                    <span class="text">{{ i.pRIX }} Dt</span>
+                                </div>
+
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                    </div></div></div></div></div>
+</div>
+</section>
+{% endblock %}

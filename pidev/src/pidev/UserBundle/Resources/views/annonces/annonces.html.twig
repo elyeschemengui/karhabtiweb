@@ -1,0 +1,280 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <br><br><br><br><br><br><br><br><br>
+
+
+    <section>
+
+
+
+
+
+
+
+
+
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="page-title">Annonces</div>
+                        <ol class="breadcrumb">
+                            <li><a href="{{ path('home') }}">acceuil</a></li>
+                            <li><a href="{{ path('annonce_Front') }}">Annonces</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+
+
+
+
+                    <div class="r-bg">
+                        <div class="widget">
+                            <h3 class="big"><i class="fa fa-search"></i> Search</h3>
+                            <form role="form" method="post">
+                                <div class="input-group" >
+                                    <input type="text" name="Titre" align="center" class="form-control input-lg" placeholder="Type and hit enter...">
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-6">
+                                        <label for="a0" class="label-small">Region</label>
+                                        <select name="region" class="form-control  selectpicker" data-style="btn-default" id="a0">
+                                            <option value="">All</option>
+                                            <option value="Ariana">Ariana</option>
+                                            <option value="Béja"> Béja</option>
+                                            <option value="BenArous">BenArous</option>
+                                            <option value="Bizerte">Bizerte</option>
+                                            <option value="Gabès">Gabès</option>
+                                            <option value="Gafsa">Gafsa</option>
+                                            <option value="Jendouba">Jendouba</option>
+                                            <option value="Kairouan">Kairouan</option>
+                                            <option value="Kasserine">Kasserine</option>
+                                            <option value="Kébili">Kébili</option>
+                                            <option value="Kef">Kef</option>
+                                            <option value="Mahdia">Mahdia</option>
+                                            <option value="Manouba">Manouba</option>
+                                            <option value="Médenine">Médenine</option>
+                                            <option value="Monastir">Monastir</option>
+                                            <option value="Nabeul">Nabeul</option>
+                                            <option value="Sfax">Sfax</option>
+                                            <option value="SidiBouzid">SidiBouzid</option>
+                                            <option value="Siliana">Siliana</option>
+                                            <option value="Sousse">Sousse</option>
+                                            <option value="Tataouine">Tataouine</option>
+                                            <option value="Tozeur">Tozeur</option>
+                                            <option value="Tunis">Tunis</option>
+                                            <option value="Zaghouan">Zaghouan</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-6">
+                                        <label for="a1" class="label-small">Boite</label>
+                                        <select name="Boite" class="form-control selectpicker" data-style="btn-default" id="a1" >
+                                            <option value="">All</option>
+                                            <option value="Automatique">Automatique</option>
+                                            <option value="Manuel">Manuel</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-6">
+                                        <label for="b2" class="label-small">Prix Min</label>
+                                        <input type="text" name="prix_min" class="form-control" id="b2" placeholder="$">
+                                    </div>
+
+                                    <div class="form-group form-group-small col-xs-12 col-sm-12 col-md-6">
+                                        <label for="b3" class="label-small">prix_max</label>
+                                        <input type="text" name="prix_max" class="form-control"  id="b3" placeholder="$">
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div class="spacer10"></div>
+
+                                                        <div class="row">
+
+                                                            <div class="form-group col-xs-12">
+                                                                <input type="submit"  class="btn btn-default col-xs-12"  value="recherche">
+                                                            </div>
+
+
+
+
+                                                        </div>
+
+                                            </form>
+
+                        </div>
+                    </div>
+
+
+                    <div class="r-bg">
+                        <div class="widget">
+                            <h3>Recent news</h3>
+                            {% for i in t | slice(0,3) %}
+                            <ul class="news-box-ul">
+                                <li>
+                <span class="image">
+                  <img src="{{asset ('/images/' ~ i.image ~ ''  )}}" alt="">
+                </span>
+                                    <div class="table-content">
+                <span class="title">
+                    <a href="blog-detail.html">{{ i.tITRE }}</a>
+                </span>
+                                        <span class="text">{{ i.pRIX }} Dt</span>
+                                    </div>
+
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="r-bg">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3>Popular cars</h3>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="search-result-heading">
+                                    <div class="search-result form-group" style="width: auto">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <a href="{{ path('annonces_new') }}" class="btn btn-default btn-lg" role="button">Ajouter Annonce</a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">Mes offres</a>
+    {% endif %}
+                                    </div>
+                                    <div class="btn-group">
+                                        <a href="#" id="grid-view" class="btn btn-default active"><i class="fa fa-th i-margin"></i></a>
+                                        <a href="#" id="list-view" class="btn btn-default "><i class="fa fa-list i-margin"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                            <div id="products" class="row">
+                                {% for annonce in annonces %}
+                                <div class="item col-xs-6 col-sm-6 col-md-4">
+                                    <div class="search-result-item-container">
+                                        <div class="search-result-item-media">
+                                            <img src="{{asset ('/images/' ~ annonce.image ~ ''  )}}" style="width: 200px;height: 125px" >
+                                        </div>
+                                        <div class="search-result-item-content">
+                                            <div class="title"><a href="product-detail.html">{{ annonce.TITRE }}</a></div>
+                                            <ul class="list-4">
+                                                <li><strong>Region:  </strong>{{ annonce.REGION }}</li>
+                                                <li><strong>ENERGIE:</strong>{{ annonce.ENERGIE }}</li>
+                                                <li><strong>Boite:</strong>{{ annonce.BOITE }}</li>
+                                            </ul>
+                                            <p class="grid-hidden">Looking cautiously round, to ascertain that they we. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                            <div class="price">{{ annonce.PRIX }} Dt</div>
+                                            <a href="{{ path('annonce_detail', { 'id': annonce.ID }) }}" class="btn btn-default" role="button">Details</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {% endfor %}
+                            </div>
+
+
+                    </div>
+
+
+                    <div class="spacer20"></div>
+
+                    <div class="row">
+
+                        <div class="col-xs-12 text-center">
+                            <ul class="pagination">
+                                {{ knp_pagination_render(annonces) }}
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="spacer60"></div>
+
+        <div class="f-bg big-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Hot Items</h3>
+                        <div class="related-items-slider">
+                            {% for i in hot %}
+                            <div class="item">
+
+                                <div class="related-item-container">
+                                    <div class="related-item-media">
+
+                                        <img src="{{asset ('/images/' ~ i.image ~ ''  )}}" alt="">
+                                    </div>
+                                    <div class="related-item-content">
+                                        <div class="title">{{ i.tITRE }}</div>
+                                        <ul class="list-4">
+                                            <li><strong>region:</strong> {{ i.region }}</li>
+                                            <li><strong>Energie:</strong> {{ i.eNERGIE }}</li>
+                                            <li><strong>Boite:</strong> {{ i.bOITE }}</li>
+                                        </ul>
+                                        <div class="price">{{ i.pRIX }}</div>
+                                        <a href="{{ path('annonce_detail',{'id': i.id}) }}" class="btn btn-default" role="button">Detailes</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section> <!-- section ends -->
+
+{% endblock %}

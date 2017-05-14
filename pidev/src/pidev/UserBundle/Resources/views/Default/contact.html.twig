@@ -1,0 +1,114 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<section>
+
+
+    <div class="spacer60"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Contact us</h1>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+
+                <div class="r-bg">
+                    <form role="form" name="ajax-form" id="ajax-form" action="http://www.entiri.net/troy/1.1/php/mail-it.php" method="post" class="form-main">
+
+
+                        <div class="row">
+                            <div class="form-group col-xs-6">
+                                <label for="name2">Name</label>
+                                <input class="form-control input-lg" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+                                <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label for="email2">Email</label>
+                                <input class="form-control input-lg" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                                <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label for="message2">Message</label>
+                                <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+                                <div class="error" id="err-message" style="display: none;">Please enter message</div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div id="ajaxsuccess">E-mail was successfully sent.</div>
+                                <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+                                <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                                <div class="error" id="err-state"></div>
+
+                                <button type="submit" class="btn btn-default" id="send">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="r-bg">
+                    <h3>Office Hours</h3>
+                    <ul class="list-1">
+                        <li><strong>Monday - Friday:</strong> 07:00 - 19:00</li>
+                        <li><strong>Saturday:</strong> 07:00 - 11:00</li>
+                        <li><strong>Sunday:</strong> closed</li>
+                    </ul>
+                </div>
+                <div class="r-bg">
+                    <h3>Share</h3>
+                    <ul class="colored-social-icons">
+                        <li><a href="#" rel="external" class="facebook"><i class="fa fa-facebook"></i>136</a></li>
+                        <li><a href="#" rel="external" class="google-plus"><i class="fa fa-google-plus"></i>15</a></li>
+                        <li><a href="#" rel="external" class="twitter"><i class="fa fa-twitter"></i>24</a></li>
+                        <li><a href="#" rel="external" class="pinterest"><i class="fa fa-pinterest"></i>31</a></li>
+                        <li><a href="#" rel="external" class="youtube"><i class="fa fa-youtube"></i>60</a></li>
+                        <li><a href="#" rel="external" class="dribbble"><i class="fa fa-dribbble"></i>125</a></li>
+                        <li><a href="#" rel="external" class="tumblr"><i class="fa fa-tumblr"></i>201</a></li>
+                        <li><a href="#" rel="external" class="instagram"><i class="fa fa-instagram"></i>305</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="spacer60"></div>
+    <iframe class="google-map" src="https://maps.google.sk/maps/ms?msa=0&amp;msid=210946297010027755543.0004c74af772bb9276d33&amp;ie=UTF8&amp;ll=48.576981,19.13117&amp;spn=0,0&amp;t=m&amp;output=embed"></iframe>
+
+
+    <div class="hero-unit">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="div-table">
+                        <div class="div-table-cell">
+                            <div class="hero-text">No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those.</div>
+                        </div>
+                        <div class="div-table-cell">
+                            <button class="btn btn-lg btn-primary">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section> <!-- section ends -->
+
+{% endblock body %}

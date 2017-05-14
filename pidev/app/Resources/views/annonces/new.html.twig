@@ -1,0 +1,164 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <div class="well"></div>
+    <div style="margin-left: 25%">
+        <div class="row">
+            <div class="col-sm-8">
+
+                <h3 class="big">Ajouter Annonce</h3>
+
+                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    {# Génération du label. #}
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.TITRE, "Titre", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.TITRE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.BOITE, "Boite", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.BOITE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.PUISSANCE_FISCALE, "PUISSANCE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.PUISSANCE_FISCALE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.CYLINDREE, "CYLINDREE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.CYLINDREE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.NOMBRE_DE_CYLINDRES, "Nbr_CYLINDRES", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.NOMBRE_DE_CYLINDRES, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.ENERGIE, "ENERGIE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.ENERGIE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.region, "region", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.region, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.image, "ajouter image ", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.image) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.image1, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.image1) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.image2, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.image2) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.image3, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                        {{ form_widget(form.image3) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                    <div>
+
+                    <br>
+                    <br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.PRIX, "PRIX", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.PRIX, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="col-sm-10">
+                        {{ form_label(form.DESCRIPITION, "Descripition", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(form.DESCRIPITION, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Create" />
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+
+
+

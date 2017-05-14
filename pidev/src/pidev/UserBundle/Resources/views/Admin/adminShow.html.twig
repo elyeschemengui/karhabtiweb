@@ -1,0 +1,181 @@
+{% extends ':admin:baseAdmin.html.twig' %}
+
+{% block content %}
+    <div class="wrapper">
+
+    <div class="page-content">
+        <div class="content container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-title">Annonce<small> Out of the box form</small></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="widget">
+                        <div class="widget-header"> <i class="icon-user"></i>
+                            <h3>Annonce</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="body">
+                                <form data-validate="parsley" method="post" novalidate class="form-horizontal label-left" id="user-form">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="text-align-center"> <img style="height: 112px;" alt="64x64" src="{{asset ('/images/' ~ annonce.image ~ '')}}" class="img-circle"> </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h3 class="no-margin">Titre :   {{ annonce.tITRE }}</h3>
+                                        </div>
+                                    </div>
+                                    <fieldset>
+                                        <legend>Account Edit Form <small>Some explanation text</small></legend>
+                                    </fieldset>
+                                    <fieldset>
+
+
+                                        <div class="control-group">
+                                            <div class="col-md-3">
+                                                <label for="first-name" class="control-label">Id <span class="required">:</span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group" ; style="text-align: center">
+                                                                {{ annonce.id }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <div class="col-md-3">
+                                                <label for="first-name" class="control-label">Id_user <span class="required">:</span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group" ; style="text-align: center">
+                                                    {{ annonce.user.id }}
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <div class="col-md-3">
+                                                    <label for="first-name" class="control-label">Date<span class="required">:</span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group" ; style="text-align: center">
+                                                        {% if annonce.date %}{{ annonce.date|date('Y-m-d') }}{% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="col-md-3">
+                                                    <label for="first-name" class="control-label">NOMBRE_DE_CYLINDRES <span class="required">:</span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group" ; style="text-align: center">
+                                                        {{ annonce.nOMBREDECYLINDRES }}
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <div class="col-md-3">
+                                                        <label for="first-name" class="control-label">Region <span class="required">:</span></label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group" ; style="text-align: center">
+                                                            {{ annonce.region }}
+                                                        </div>
+                                                    </div>
+                                                <div class="control-group">
+                                                    <div class="col-md-3">
+                                                        <label for="first-name" class="control-label">ENERGIE <span class="required">:</span></label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-group" ; style="text-align: center">
+                                                            {{ annonce.eNERGIE }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <div class="col-md-3">
+                                                            <label for="first-name" class="control-label">PUISSANCE_FASCIALE <span class="required">:</span></label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <div class="form-group" ; style="text-align: center">
+                                                                {{ annonce.pUISSANCEFISCALE }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="control-group">
+                                                            <div class="col-md-3">
+                                                                <label for="first-name" class="control-label">CYLINDREE <span class="required">:</span></label>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="form-group" ; style="text-align: center">
+                                                                    {{ annonce.cYLINDREE }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="control-group">
+                                                                <div class="col-md-3">
+                                                                    <label for="first-name" class="control-label">BOITE <span class="required">:</span></label>
+                                                                </div>
+                                                                <div class="col-md-9">
+                                                                    <div class="form-group" ; style="text-align: center">
+                                                                        {{ annonce.bOITE }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="control-group">
+                                                                    <div class="col-md-3">
+                                                                        <label for="first-name" class="control-label">PRIX <span class="required">:</span></label>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="form-group" ; style="text-align: center">
+                                                                            {{ annonce.pRIX }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="control-group">
+                                                                        <div class="col-md-3">
+                                                                            <label for="first-name" class="control-label">DESCRIPITION <span class="required">:</span></label>
+                                                                        </div>
+                                                                        <div class="col-md-9">
+                                                                            <div class="form-group" ; style="text-align: center">
+                                                                                {{ annonce.dESCRIPITION }}
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                        </div></div>
+
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend class="section">Contact Info</legend>
+                                        <div class="control-group">
+                                            <div class="col-md-3">
+                                                <label for="first-name" class="control-label">Num_Tel <span class="required">:</span></label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group" ; style="text-align: center">
+                                                    {{ annonce.user.numTel }}
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <div class="col-md-3">
+                                                    <label for="first-name" class="control-label">E-mail <span class="required">:</span></label>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="form-group" ; style="text-align: center">
+                                                        {{ annonce.user.email }}
+                                                    </div>
+                                                </div>
+
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <button data-toggle="button" class="btn btn-sm btn-warning"><a href="{{ path('annonces_delete', { 'id': annonce.ID }) }}">Delete</a>  </button></td>
+                                        <button class="btn btn-default" type="button"><a href="{{ path('annonces_index') }}">Back to the list</a></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}

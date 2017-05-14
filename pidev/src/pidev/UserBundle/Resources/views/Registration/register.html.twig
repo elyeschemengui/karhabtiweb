@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<div style="background-color: #bdbdbd">
+    <br><br><br><br><br><br><br><br>
+    <div class="container" style="margin-left: 25%">
+        <div class="row">
+            <h1 style="margin-left: 27%">S'enregistrer</h1>
+
+            <div class="col-sm-8">
+
+                    <div class="r-bg">
+                        {% include "@FOSUser/Registration/register_content.html.twig" %}
+
+                    </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

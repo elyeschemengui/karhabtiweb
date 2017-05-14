@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+<div align="center">
+
+    {{ form_widget(form) }}
+
+    <div>
+        <input type="submit" class="btn btn-lg btn-default" value="{{ 'Modifier'|trans }}" />
+    </div>
+
+</div>
+{{ form_end(form) }}

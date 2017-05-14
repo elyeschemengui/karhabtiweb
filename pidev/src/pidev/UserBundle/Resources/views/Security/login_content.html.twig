@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>He & A DEVELOPERS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Credit Login / Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="{{ asset('template/login/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ asset('template/login/css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('template/login/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- //web font -->
+</head>
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<br><br>
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+        <input type="hidden" name="_target_path" value="/check" />
+
+    <div class="main-agileits">
+        <!--form-stars-here-->
+        <div class="form-w3-agile" style="margin-top: 115px;">
+            <h2>S'identifier</h2>
+                <div class="form-sub-w3">
+    <label for="username">USERNAME</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    <div class="icon-w3" style="margin-right: 420px;">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-sub-w3">
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" name="_password" required="required" />
+                    <div class="icon-w3" style="margin-right: 420px;">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+            <p class="p-bottom-w3ls"> <a class="w3_play_icon1" href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié </a></p><br>
+
+            <p class="p-bottom-w3ls">Vous êtes nouveau sur K A R H A B T Y ? <a class="w3_play_icon1" href="{{ path('fos_user_registration_register') }}">S'inscrire </a></p>
+
+
+            <div class="submit-w3l">
+
+   <input type="submit" id="_submit" name="_submit" value="{{ 'Submit'|trans }}" />
+
+                </div>
+
+        </div>
+    </div>
+</form>

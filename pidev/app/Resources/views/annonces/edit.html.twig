@@ -1,0 +1,298 @@
+{% extends 'base.html.twig' %}
+{% block navbarre %}
+<body class="no-main-slider">
+
+<div class="color-picker">
+    <a href="#" class="handle"><i class="fa fa-cog"></i></a>
+    <div class="settings-header">
+        <h3>Setting panel</h3>
+    </div>
+    <div class="section">
+        <h4 class="color"><i class="icon-tint"></i> Color schemes:</h4>
+        <div class="colors">
+            <a href="#" class="color-1" ></a>
+            <a href="#" class="color-2" ></a>
+            <a href="#" class="color-3" ></a>
+            <a href="#" class="color-4" ></a>
+            <a href="#" class="color-5" ></a>
+        </div>
+    </div>
+</div>
+
+<div id="loading-wrap">
+    <div id="loading">
+        <i class="fa fa-cog fa-spin"></i>
+    </div>
+</div>
+
+<header class="home-header"> <!-- header -->
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-inner">
+                <!-- logo-->
+                <a href="index-2.html" title="Home" class="logo pull-left"><img src="img/logo.png" alt="logo"></a>
+                <!-- logo ends -->
+
+                <!-- Menu -->
+                <ul class="nav pull-left" id="nav">
+                    <li><a href="index-2.html" title="">Home</a></li>
+                    <li><a href="catalog-right.html" title="">Catalog</a>
+                        <ul>
+                            <li><a href="catalog-right.html">Right sidebar</a></li>
+                            <li><a href="catalog-left.html">Left sidebar</a></li>
+                            <li><a href="catalog.html">Without sidebar</a></li>
+                            <li><a href="product-detail.html">Product detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="components.html" title="">Pages</a>
+                        <!-- sub menu -->
+                        <ul>
+                            <li><a href="components.html" title="">Components</a></li>
+                            <li><a href="about-us.html" title="">About us</a></li>
+                            <li><a href="services.html" title="">Services</a></li>
+                            <li><a href="gallery-4.html" title="">Gallery</a>
+                                <!-- sub sub menu -->
+                                <ul>
+                                    <li><a href="gallery-4.html" title="">Gallery 4 columns</a></li>
+                                    <li><a href="gallery-3.html" title="">Gallery 3 columns</a></li>
+                                    <li><a href="gallery-2.html" title="">Gallery 2 columns</a></li>
+                                </ul>
+                                <!-- sub sub menu ends -->
+                            </li>
+                        </ul>
+                        <!-- sub menu ends -->
+                    </li>
+                    <li><a href="shop-right.html" title="">Shop</a>
+                        <ul>
+                            <li><a href="shop-right.html">Right sidebar</a></li>
+                            <li><a href="shop-left.html">Left sidebar</a></li>
+                            <li><a href="shop.html">Without sidebar</a></li>
+                            <li><a href="shop-product-detail.html">Shop Product detail</a></li>
+                            <li><a href="shop-cart.html">Cart</a></li>
+                            <li><a href="shop-checkout.html">Checkout</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog-right.html" title="">Blog</a>
+                        <ul>
+                            <li><a href="blog-right.html">Right sidebar</a></li>
+                            <li><a href="blog-left.html">Left sidebar</a></li>
+                            <li><a href="blog.html">Without sidebar</a></li>
+                            <li><a href="blog-masonry.html">Blog masonry</a></li>
+                            <li><a href="blog-detail.html">Blog detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="selected"><a href="contact.html" title="">Contact</a></li>
+                </ul>
+                <!-- Menu ends -->
+                <div class="menu-right-bar">
+                    <ul class="menu-right-bar-ul">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            Connecté en tant que {{ app.user.username }}
+                            -
+                            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                        {% endif %}                     </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="singInForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Please Sing Up</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="login-name" class="control-label">Login name:</label>
+                        <input type="text" class="form-control" id="login-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">Password:</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock navbarre %}
+{% block body %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <div class="well"></div>
+    <div style="margin-left: 25%">
+        <div class="row">
+            <div class="col-sm-8">
+
+
+                <h3 class="big">Modifier Votre Annonce</h3>
+                {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+                <div class="form-group">
+                    {# Génération du label. #}
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.TITRE, "Titre", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.TITRE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.BOITE, "Boite", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.BOITE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.PUISSANCE_FISCALE, "PUISSANCE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.PUISSANCE_FISCALE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.CYLINDREE, "CYLINDREE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.CYLINDREE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.NOMBRE_DE_CYLINDRES, "Nbr_CYLINDRES", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.NOMBRE_DE_CYLINDRES, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.ENERGIE, "ENERGIE", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.ENERGIE, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.region, "region", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.region, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.image, "ajouter image ", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.image) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.image1, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.image1) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.image2, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.image2) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.image3, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+                        {{ form_widget(edit_form.image3) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        <div>
+                            {{ form_label(edit_form.image4, "ajouter image", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}</div>
+                        </br>
+                        {{ form_widget(edit_form.image4) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.PRIX, "PRIX", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.PRIX, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    </br>
+                    </br>
+
+                    <div class="col-sm-10">
+                        {{ form_label(edit_form.DESCRIPITION, "Descripition", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+                        {{ form_widget(edit_form.DESCRIPITION, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    </br></br>
+                    </br>
+
+
+
+
+                </div>
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input type="submit" value="Modifier" class="btn btn-lg btn-default">
+                <div style="float: right">   <button class="btn btn-lg btn-default"> <a href="{{ path('annonces_index') }}">retoure a la liste</a></button>
+
+                    {{ form_end(edit_form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

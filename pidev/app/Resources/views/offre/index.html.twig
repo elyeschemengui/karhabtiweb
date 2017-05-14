@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="background-color: dimgrey">
+    <div style="margin-left: 6%;">
+<div class="spacer60"></div>
+    <br><br><br><br>
+
+
+    <table>
+        <thead>
+
+
+        </thead>
+        <tbody>
+
+
+
+                <div class="col-sm-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="r-bg">
+                                <h1>Liste des Offres</h1>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <form role="form" method="post">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Rechercher</span>
+                                                <input type="text" name="offre" class="form-control input-lg" placeholder="Ecrire et appuyez sur entrer ...">
+                                                <span class="input-group-addon">
+                <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
+              </span>
+                                            </div>
+                                        </form>
+                                        <br>
+                                    </div>
+                                </div>
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                <a href="{{ path('offre_new') }}" style="float: right;font-size: medium">Ajouter une offre</a><br><br>
+                                {% else %}
+                                <a href="{{ path('fos_user_security_login') }}" style="margin-left: 85%;font-size: medium">Ajouter une offre</a><br><br>
+                                {% endif %}
+                                {% for offre in offres %}
+
+
+                         <div id="products" class="row" style="margin-left: 0.1px">
+                             <div class="item col-xs-6 col-sm-6 col-md-4" style="background-color: #F2F2F2 ; width: auto" >
+                                  <div class="search-result-item-container" style="background-color: #F2F2F2;width: auto">
+                                       <div class="search-result-item-media">
+
+                                           <a href="{{ path('offre_show', { 'id': offre.id }) }}">  <img src="{{asset ('/pictures/' ~ offre.photo )}}" style="width: 200px;height: 200px"/></a>
+
+
+                                       </div>
+                                       <div class="search-result-item-content" style="background-color: #F2F2F2">
+
+                                            <a href="{{ path('offre_show', { 'id': offre.id }) }}" class="btn btn-default" style="width: auto" role="button">Details</a>
+
+                                       </div>
+                                  </div>
+                             </div>
+
+
+
+        {% endfor %}
+
+                         </div>
+                                <div align="center" style="float: left;margin-left: 35%">
+                                    <div class="row">
+                                        <div class="pagination">
+                                            <div class="col-xs-12">
+
+                                                {{ knp_pagination_render(offres) }}
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+            </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        </tbody>
+    </table>
+
+
+    <div></div>
+    </div>
+    </div>
+{% endblock %}

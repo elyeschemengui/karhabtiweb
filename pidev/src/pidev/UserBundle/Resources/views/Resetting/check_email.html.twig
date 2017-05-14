@@ -1,0 +1,27 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block body %}
+    <div style="background-color: #bdbdbd">
+    <br><br><br><br><br><br><br><br>
+    <div class="container" style="margin-left: 25%">
+    <div class="row">
+    <h1 style="margin-left: 24%">E-mail envoyé !</h1>
+
+    <div class="col-sm-8">
+
+    <div class="r-bg">
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<p>
+{{ 'Un e-mail a été envoyé. Il contient un lien sur lequel il vous faudra cliquer pour réinitialiser votre mot de passe.
+
+        Si vous ne recevez pas un email, vérifiez votre dossier spam ou essayez à nouveau.'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+</p>
+{% endblock %}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="not-ie" lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from www.entiri.net/troy/1.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Feb 2017 21:44:15 GMT -->
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="utf-8">
+    <title>K A R H A B T Y</title>
+    <meta name="description" content="your description">
+    <meta name="keywords" content="your keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="{{ asset('template/img/favicon.png')}}" rel="icon" type="image/png">
+    <!-- Bootstrap style -->
+    <link href="{{ asset('template/css/bootstrap.min.css')}}" rel="stylesheet" media="screen" />
+    <!-- Font Awesome Style -->
+    <link href="{{ asset('template/css/font-awesome.min.css')}}" rel="stylesheet" media="screen" />
+    <!-- Animate Style -->
+    <link href="{{ asset('template/css/animate.css')}}" rel="stylesheet" media="screen" />
+    <!-- Lightbox -->
+    <link href="{{ asset('template/css/magnific-popup.css')}}" rel="stylesheet" media="screen" />
+    <!-- Flexslider Style -->
+    <link href="{{ asset('template/css/flexslider.css')}}" rel="stylesheet" media="screen" />
+    <!-- Style css -->
+    <link href="{{ asset('template/css/style.css')}}" rel="stylesheet" media="screen" />
+    <!-- Components css -->
+    <link href="{{ asset('template/css/components.css')}}" rel="stylesheet" media="screen" />
+    <!-- Color style css -->
+    <link href="{{ asset('template/css/color/color-1.css')}}" rel="stylesheet" media="screen" id="color" />
+    <!-- Responsive css -->
+    <link href="{{ asset('template/css/responsive.css')}}" rel="stylesheet" media="screen" />
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link href="{{ asset('template/css/extralayers.css')}}" rel="stylesheet" media="screen" />
+    <link href="{{ asset('template/rs-plugin/css/settings.css')}}" rel="stylesheet" media="screen" />
+    <!-- Google Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
+    <!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Modernizr js -->
+    <script src="{{ asset('template/js/modernizr.js')}}"></script>
+</head>
+<body>
+<div class="color-picker">
+    <a href="#" class="handle"><i class="fa fa-cog"></i></a>
+    <div class="settings-header">
+        <h3>Setting panel</h3>
+    </div>
+    <div class="section">
+        <h4 class="color"><i class="icon-tint"></i> Color schemes:</h4>
+        <div class="colors">
+            <a href="#" class="color-1" ></a>
+            <a href="#" class="color-2" ></a>
+            <a href="#" class="color-3" ></a>
+            <a href="#" class="color-4" ></a>
+            <a href="#" class="color-5" ></a>
+        </div>
+    </div>
+</div>
+    <div id="loading-wrap">
+        <div id="loading">
+            <i class="fa fa-cog fa-spin"></i>
+        </div>
+    </div>
+
+<header class="home-header"> <!-- header -->
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-inner">
+                <!-- logo-->
+                <a href="{{ path('home') }}l" title="Home" class="logo pull-left"></a>
+                <!-- logo ends -->
+
+                <!-- Menu -->
+                <ul class="nav pull-left" id="nav">
+                    <li><a href="{{ path('home') }}" title="">Home</a></li>
+                    <li class="selected"><a href="{{ path('annonce_Front') }}" title="">Annonces</a>
+
+                    </li>
+                    <li><a href="components.html" title="">Pages</a>
+                        <!-- sub menu -->
+
+                        <!-- sub menu ends -->
+                    </li>
+                    <li><a href="shop-right.html" title="">Shop</a>
+
+                    </li>
+                    <li><a href="blog-right.html" title="">Blog</a>
+
+                    </li>
+
+                </ul>
+                <!-- Menu ends -->
+                <div class="menu-right-bar">
+                    <ul class="menu-right-bar-ul">
+                        <div class="menu-right-bar">
+                            <ul class="menu-right-bar-ul">
+                                <li class="text hidden-sm hidden-xs"></li>
+
+                                <li>{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('fos_user_profile_show') }}">  <img  src="{{asset ('/pictures/' ~ app.user.image ~ '')}}"  width="36"> </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('fos_user_profile_show') }}" >{{ app.user.username }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                                            </li>
+                                        </ul>
+                                    {% else %}
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('fos_user_registration_register') }}">s'inscrire</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                                            </li>
+                                        </ul>
+                                    {% endif %} </li>
+                    </ul>
+</div></ul></div></div></div>    </nav>
+    {% block body %}
+    <div class="tp-banner-container main-slider">
+        <div class="tp-banner" >
+            <ul>
+                <!-- SLIDE  -->
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="{{ asset('template/img/slider-main/1.jpg') }}" data-delay="8000"  data-saveperformance="off"  data-title="Our Workplace">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('template/img/slider-main/1.jpg') }}"  alt="kenburns1"  data-bgposition="left center" data-kenburns="on" data-duration="9000" data-ease="Linear.easeNone" data-bgfit="100" data-bgfitend="130" data-bgpositionend="right center">
+                    <!-- LAYERS -->
+
+                    <div class="caption tp-resizeme skewfromrightshort big-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="-70"
+                         data-speed="500"
+                         data-start="500"
+                         data-easing="easeOutExpo"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                    >K A R H A B T Y
+                    </div>
+
+
+                    <div class="caption tp-resizeme lfl fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="0"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >HE & A DEVELOPERS
+                    </div>
+
+                </li>
+                <!-- SLIDE  -->
+                <li data-transition="slidedown" data-slotamount="1" data-masterspeed="1500" data-thumb="{{ asset('template/img/slider-main/2.jpg')}}" data-delay="8000"  data-saveperformance="off"  data-title="New York City">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('template/img/slider-main/2.jpg')}}"  alt="kenburns6"  data-bgposition="center top" data-kenburns="on" data-duration="9000" data-ease="Linear.easeNone" data-bgfit="110" data-bgfitend="100" data-bgpositionend="center center">
+                    <!-- LAYERS -->
+                    <div class="caption tp-resizeme skewfromrightshort big-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="-70"
+                         data-speed="500"
+                         data-start="1000"
+                         data-easing="easeOutExpo"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                    >MERCEDES
+                    </div>
+
+
+                    <div class="caption tp-resizeme lfl fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="0"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >6.5l engine
+                    </div>
+                    <div class="caption tp-resizeme lfr fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="50"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="2500"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >120 000km
+                    </div>
+                    <div class="caption tp-resizeme lfl fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="100"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="3000"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >250 mph
+                    </div>
+
+                    <div class="caption tp-resizeme lfl fadeout small-caption-2"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="220"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="4500"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    ><a href="product-detail.html" class="btn btn-default btn-lg" role="button">See details</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-transition="slideleft" data-slotamount="1" data-masterspeed="1500" data-thumb="{{ asset('template/img/slider-main/3.jpg')}}" data-delay="8000"  data-saveperformance="off"  data-title="Nerd Wisdom">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('template/img/slider-main/3.jpg')}}"  alt="kenburns3"  data-bgposition="left top" data-kenburns="on" data-duration="9000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right bottom">
+                    <!-- LAYERS -->
+                    <div class="caption tp-resizeme skewfromrightshort big-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="-70"
+                         data-speed="500"
+                         data-start="1000"
+                         data-easing="easeOutExpo"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                    >NISSAN GTR
+                    </div>
+
+
+                    <div class="caption tp-resizeme lfl fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="0"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >6.5l engine
+                    </div>
+                    <div class="caption tp-resizeme lfr fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="50"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="2500"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >100 000km
+                    </div>
+                    <div class="caption tp-resizeme lfl fadeout small-caption"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="100"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="3000"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    >250 mph
+                    </div>
+
+
+                    <div class="caption tp-resizeme lfl fadeout small-caption-2"
+                         data-x="center"
+                         data-y="center"
+                         data-voffset="220"
+                         data-hoffset = "0"
+                         data-speed="500"
+                         data-start="4500"
+                         data-easing="easeOutExpot"
+                         data-splitout="none"
+                    ><a href="product-detail.html" class="btn btn-default btn-lg" role="button">See details</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</header>
+
+
+
+<section> <!-- section -->
+    <div class="promo-video-container alert fade in">
+        <div class="promo-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="promo-video-text">Play our promotion video and learn more</span>
+                        <a href="https://www.youtube.com/watch?v=pCspLo74BI8"  class="popup-youtube promo-video-link" rel="external"><i class="fa fa-play"></i></a>
+                        <span class="promo-video-text">Pour un Monde Meilleur</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="close" data-dismiss="alert">x</a>
+    </div>
+    <div class="f-bg big-search-container">
+        <div class="container">
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <form role="form" method="post">
+                        <div class="input-group">
+                            <span class="input-group-addon">Search</span>
+                            <input type="text" name="titre" class="form-control input-lg" placeholder="Type and hit enter...">
+                            <span class="input-group-addon">
+                <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
+              </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="spacer30"></div>
+            <div class="row">
+                    <div class="col-sm-12">
+                        <p><a href="{{ path('annonce_Front') }}" id="advanced-serach-container-button" class="advanced-serach-container-button">Recherche Avancée</a></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+
+    <div class="d-bg advanced-search-container" id="advanced-search-container">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <form role="form" class="form-dark">
+
+                        <div class="row">
+                            <div class="form-group col-sm-3">
+                                <label for="a0">Country</label>
+                                <select class="form-control input-lg selectpicker" id="a0" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Austria</option>
+                                    <option>Germany</option>
+                                    <option>Spain</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="a1">State</label>
+                                <select class="form-control input-lg selectpicker" id="a1"  data-style="btn-primary btn-lg" disabled>
+                                    <option>All</option>
+                                    <option>Salzburg (2)</option>
+                                    <option>Vienna (1)</option>
+                                    <option>Tyrol (3)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="a2">City</label>
+                                <select class="form-control input-lg selectpicker" id="a2" data-style="btn-primary btn-lg" disabled>
+                                    <option>All</option>
+                                    <option>Salzburg (2)</option>
+                                    <option>Vienna (1)</option>
+                                    <option>Tyrol (3)</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-3">
+                                <label for="a3">Condition</label>
+                                <select class="form-control input-lg selectpicker" id="a3" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Only new cars</option>
+                                    <option>Only used cars</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-sm-3">
+                                <label for="b0">Brand</label>
+                                <select class="form-control input-lg selectpicker" id="b0" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>BMW</option>
+                                    <option>Audi</option>
+                                    <option>Mazda</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="b1">Model</label>
+                                <select class="form-control input-lg selectpicker" id="b1" disabled data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Seria 1</option>
+                                    <option>Seria 3</option>
+                                    <option>Seria 5</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="b2">Price from</label>
+                                <input type="text" class="form-control input-lg" id="b2" placeholder="$">
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="b3">Price to</label>
+                                <input type="text" class="form-control input-lg" id="b3" placeholder="$">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-sm-3">
+                                <label for="c0">Year from</label>
+                                <select class="form-control input-lg selectpicker" id="c0" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>1990</option>
+                                    <option>1991</option>
+                                    <option>1992</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="c1">Year to</label>
+                                <select class="form-control input-lg selectpicker" id="c1" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                    <option>2012</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="c2">Mileage from</label>
+                                <input type="text" class="form-control input-lg" id="c2" placeholder="0">
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="c3">Mileage to</label>
+                                <input type="text" class="form-control input-lg" id="c3" placeholder="0">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-sm-3">
+                                <label for="d0">Fuel type</label>
+                                <select class="form-control input-lg selectpicker" id="d0" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Diesel</option>
+                                    <option>Petrol</option>
+                                    <option>Gas (LPG)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="d1">Gearbox</label>
+                                <select class="form-control input-lg selectpicker" id="d1" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Automatic</option>
+                                    <option>Manula</option>
+                                    <option>Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="d2">Body type</label>
+                                <select class="form-control input-lg selectpicker" id="d2" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>Sedan</option>
+                                    <option>Hatchback</option>
+                                    <option>SUV</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-3">
+                                <label for="d3">Doors</label>
+                                <select class="form-control input-lg selectpicker" id="d3" data-style="btn-primary btn-lg">
+                                    <option>All</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="spacer20"></div>
+                        <div class="row">
+
+                            <div class="col-sm-2 col-sm-offset-5">
+                                <button type="submit" class="btn btn-default btn-lg btn-big-border col-xs-12">Submit</button>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="spacer60"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+
+
+
+
+
+
+
+
+                <div class="r-bg">
+                    <div class="widget">
+                        <div class="col-sm-4">
+                            <div class="r-bg">
+                                <h3 class="big">Annonces</h3>
+                                <h4>Nouvelles</h4>
+                                {% for i in annoncesnew | slice(0,4) %}
+                                <ul class="list-1">
+                                    <li><a href="{{ path('annonce_detail',{'id' : i.id}) }}">{{ i.tITRE }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                <h4>Anciens</h4>
+                                {% for i in annoncesold | slice(0,4) %}
+                                <ul class="list-1">
+                                    <li><a href="{{ path('annonce_detail',{'id' : i.id}) }}">{{ i.tITRE }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="col-sm-8">
+                <div class="r-bg">
+                    <h3>Search results</h3>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="search-result-heading">
+
+                                <div class="btn-group">
+                                    <a href="#" id="grid-view" class="btn btn-default active"><i class="fa fa-th i-margin"></i></a>
+                                    <a href="#" id="list-view" class="btn btn-default "><i class="fa fa-list i-margin"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    {% if titre1 is empty %}
+                    <div id="products" class="row">
+                        {% for annonce in annonces | slice (0,9) %}
+                        <div class="item col-xs-6 col-sm-6 col-md-4">
+                            <div class="search-result-item-container">
+                                <div class="search-result-item-media">
+                                    <img src="{{asset ('/images/' ~ annonce.image ~ ''  )}}" style="width: 200px;height: 125px" alt="">
+                                </div>
+                                <div class="search-result-item-content">
+                                    <div class="title"><a href="product-detail.html">{{ annonce.TITRE }}</a></div>
+
+                                    <ul class="list-4">
+                                        <li><strong>Location:</strong> {{ annonce.REGION }}</li>
+                                        <li><strong>Engine:</strong> {{ annonce.ENERGIE }}</li>
+                                        <li><strong>Mileage:</strong> {{ annonce.BOITE }}</li>
+                                    </ul>
+                                    <div class="price">{{ annonce.PRIX }} Dt</div>
+                                    <a href="{{ path('annonce_detail',{'id' : annonce.id}) }}" class="btn btn-default" role="button">Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+{% endfor %}
+                        {% else %}
+                        <div id="products" class="row">
+                            {% for annonce in titre1 %}
+                            <div class="item col-xs-6 col-sm-6 col-md-4">
+                                <div class="search-result-item-container">
+                                    <div class="search-result-item-media">
+                                        <img src="{{asset ('/images/' ~ annonce.image ~ ''  )}}" style="width: 200px;height: 125px" alt="">
+                                    </div>
+                                    <div class="search-result-item-content">
+                                        <div class="title"><a href="product-detail.html">{{ annonce.TITRE }}</a></div>
+
+                                        <ul class="list-4">
+                                            <li><strong>Location:</strong> {{ annonce.REGION }}</li>
+                                            <li><strong>Engine:</strong> {{ annonce.ENERGIE }}</li>
+                                            <li><strong>Mileage:</strong> {{ annonce.BOITE }}</li>
+                                        </ul>
+                                        <div class="price">{{ annonce.PRIX }} Dt</div>
+                                        <a href="{{ path('annonce_detail',{'id' : annonce.id}) }}" class="btn btn-default" role="button">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            {% endfor %}
+                            <div class="row">
+
+                                <div class="col-xs-12 text-center">
+                                    <ul class="pagination">
+                                        {{ knp_pagination_render(titre1) }}
+                                    </ul>
+                                </div>
+                            </div>
+                            {% endif %}
+
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="spacer60"></div>
+
+
+    <div class="spacer40"></div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="news-box">
+                    <img src="{{ asset('template/img/blog-detail/1.jpg')}}" alt="">
+                    <div class="overlay">
+                        <div class="table-cont">
+                            <div class="table-cell">
+                                <h4>offre</h4>
+                                <a class="btn btn-warning" role="button" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="news-box">
+                    <img src="{{ asset('template/img/blog-detail/2.jpg')}}" alt="">
+                    <div class="overlay">
+                        <div class="table-cont">
+                            <div class="table-cell">
+                                <h4>offre</h4>
+                                <a class="btn btn-warning" role="button" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="news-box">
+                    <img src="{{ asset('template/img/blog-detail/3.jpg')}}" alt="">
+                    <div class="overlay">
+                        <div class="table-cont">
+                            <div class="table-cell">
+                                <h4>offre </h4>
+                                <a class="btn btn-warning" role="button" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clasic-slider flexslider">
+                    <ul class="slides">
+                        {% for i in hot |  slice (0,2) %}
+
+                            <li>
+                            <div class="caption">
+                                <div class="table-cont">
+                                    <div class="table-cell">
+                                        <h2>{{ i.tITRE }}</h2>
+                                        <p>{{ i.bOITE }}</p>
+                                        <p><strong>{{ i.pRIX }} Dt</strong></p>
+                                        <a href="{{ path('annonce_detail',{'id' : i.id}) }}" class="btn btn-warning btn-lg margin-top-10" role="button">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="{{asset ('/images/' ~ i.image ~ ''  )}}" style="width: 1140px;height: 380px" alt=""/>
+                        </li>
+
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="spacer60"></div>
+
+
+    <div class="promo-box">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+
+</section> <!-- section ends -->
+
+{% endblock body %}
+<footer class="footer">  <!-- footer -->
+    <div class="footer-top">
+        <div class="footer-top-bg">
+            <div class="container">
+                <div class="row">
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Info</h4>
+                            <p>Jeune groupe d'etudiants a esprit.</p>
+                            <div class="spacer50"></div>
+                            <div class="spacer1"></div>
+                            <p>&copy; He & A Developers </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>Address</h4>
+                            <ul class="list-3">
+                                <li>Z.I. Chotrana II B.P. 160
+                                </li>
+                                <li>Pôle Technologique El Ghazela - Ariana 2083</li>
+                                <li>&nbsp;</li>
+                                <li>70 685 685</li>
+                                <li>&nbsp;</li>
+                                <li><a href="mailto:headevelopers@gmail.com">headevelopers@gmail.com</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>Contact</h4>
+                            <ul class="list-3">
+                                <li> 70 685 685</li>
+
+                            </ul>
+                            <div class="spacer15"></div>
+                            <a class="btn btn-default" href="mailto:headevelopers@gmail.com" role="button">Email us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</footer> <!-- Footer ends -->
+<a href="#" class="back-to-top"><span></span></a>
+
+<script src="{{ asset('template/js/jquery.js ')}}" > </script>
+<script src="{{ asset('template/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('template/js/jquery.easing.js')}}"></script>
+<script src="{{ asset('template/js/jquery.isotope.min.js')}}"></script>
+<script src="{{ asset('template/js/jquery.fitvids.js')}}"></script>
+<script src="{{ asset('template/js/jquery.appear.js')}}"></script>
+<script src="{{ asset('template/js/retina.js')}}"></script>
+<script src="{{ asset('template/js/respond.min.js')}}"></script>
+<script src="{{ asset('template/js/jquery.parallax-1.1.3.js')}}"></script>
+<script src="{{ asset('template/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('template/js/jquery.sticky.js')}}"></script>
+<script src="{{ asset('template/js/jquery.countTo.js')}}"></script>
+<script src="{{ asset('template/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('template/js/jquery.flexslider-min.js')}}"></script>
+<script src="{{ asset('template/js/ion.rangeSlider.min.js')}}"></script>
+<script src="{{ asset('template/js/selectnav.js')}}"></script>
+<script src="{{ asset('template/js/responsive-tabs.js')}}"></script>
+<script src="{{ asset('template/js/bootstrap-select.min.js')}}"></script>
+<script src="{{ asset('template/js/functions.js')}}"></script>
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="{{ asset('template/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('template/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function() {
+
+
+
+        jQuery('.tp-banner').show().revolution(
+                {
+                    dottedOverlay:"none",
+                    delay:16000,
+                    startwidth:1920,
+                    startheight:800,
+                    hideThumbs:200,
+
+                    thumbWidth:100,
+                    thumbHeight:50,
+                    thumbAmount:5,
+
+                    navigationType:"none",
+                    navigationArrows:"solo",
+                    navigationStyle:"preview1",
+
+                    touchenabled:"on",
+                    onHoverStop:"off",
+
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
+
+                    parallax:"mouse",
+                    parallaxBgFreeze:"on",
+                    parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+                    keyboardNavigation:"off",
+
+                    navigationHAlign:"center",
+                    navigationVAlign:"bottom",
+                    navigationHOffset:0,
+                    navigationVOffset:20,
+
+                    soloArrowLeftHalign:"left",
+                    soloArrowLeftValign:"center",
+                    soloArrowLeftHOffset:20,
+                    soloArrowLeftVOffset:0,
+
+                    soloArrowRightHalign:"right",
+                    soloArrowRightValign:"center",
+                    soloArrowRightHOffset:20,
+                    soloArrowRightVOffset:0,
+
+                    shadow:0,
+                    fullWidth:"on",
+                    fullScreen:"off",
+
+                    spinner:"spinner4",
+
+                    stopLoop:"off",
+                    stopAfterLoops:-1,
+                    stopAtSlide:-1,
+
+                    shuffle:"off",
+
+                    autoHeight:"off",
+                    forceFullWidth:"off",
+
+
+
+                    hideThumbsOnMobile:"off",
+                    hideNavDelayOnMobile:1500,
+                    hideBulletsOnMobile:"off",
+                    hideArrowsOnMobile:"off",
+                    hideThumbsUnderResolution:0,
+
+                    hideSliderAtLimit:0,
+                    hideCaptionAtLimit:0,
+                    hideAllCaptionAtLilmit:0,
+                    startWithSlide:0,
+                    videoJsPath:"rs-plugin/videojs/",
+                    fullScreenOffsetContainer: ""
+                });
+
+
+
+
+    });	//ready
+
+</script>
+
+</body>
+
+<!-- Mirrored from www.entiri.net/troy/1.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Feb 2017 21:50:30 GMT -->
+</html>

@@ -1,0 +1,63 @@
+pidev_user_offre:
+    resource: "@pidevUserBundle/Resources/config/routing/offre.yml"
+    prefix:   /offre
+pidev_user_annonces:
+    resource: "@pidevUserBundle/Resources/config/routing/annonces.yml"
+    prefix:   /annonces
+
+home:
+    path:     /home
+    defaults: { _controller: pidevUserBundle:Default:home}
+
+
+contact:
+    path:     /contact
+    defaults: { _controller: pidevUserBundle:Default:contact}
+
+produit:
+    path:     /produit
+    defaults: { _controller: pidevUserBundle:Default:produit}
+
+homeAdmin:
+    path:     /admin/homeAdmin
+    defaults: { _controller: pidevUserBundle:Admin:homeAdmin }
+userProfile:
+    path:     /userProfile
+    defaults: { _controller: pidevUserBundle:Admin:userProfile }
+loginAdmin:
+    path:     /loginAdmin
+    defaults: { _controller: pidevUserBundle:Admin:login }
+users:
+    path:     /users
+    defaults: { _controller: pidevUserBundle:Admin:users }
+editProfile:
+    path:     /editProfile
+    defaults: { _controller: pidevUserBundle:Default:editProfile }
+
+check:
+    path:     /check
+    defaults: { _controller: pidevUserBundle:Default:check}
+
+validationOffre:
+    path:     /valid/{id}
+    defaults: { _controller: pidevUserBundle:Offre:valid}
+
+afficheOffre:
+    path:     /admin/affoffre
+    defaults: { _controller: pidevUserBundle:Offre:afficheOffre}
+
+afficheTouteOffre:
+    path:     /admin/affoffre2
+    defaults: { _controller: pidevUserBundle:Offre:afficheOffre2}
+
+afficheTouteUsers:
+    path:     /admin/users
+    defaults: { _controller: pidevUserBundle:Offre:afficheusers2}
+Delete_user:
+    path:     /deleteUser/{id}
+    defaults: { _controller: pidevUserBundle:Admin:delete }
+
+ex:
+    path:    /admin/ex
+    defaults: { _controller: "pidevUserBundle:Annonces:declaration" }
+

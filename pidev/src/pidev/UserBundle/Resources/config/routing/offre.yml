@@ -1,0 +1,37 @@
+offre_index:
+    path:     /
+    defaults: { _controller: "pidevUserBundle:Offre:index" }
+
+offre2_index:
+    path:     /mesoffres
+    defaults: { _controller: "pidevUserBundle:Offre:index2" }
+    methods:  GET
+
+offre_show:
+    path:     /{id}/show
+    defaults: { _controller: "pidevUserBundle:Offre:show" }
+    methods:  GET
+
+offre_new:
+    path:     /new
+    defaults: { _controller: "pidevUserBundle:Offre:new" }
+    methods:  [GET, POST]
+
+offre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "pidevUserBundle:Offre:edit" }
+    methods:  [GET, POST]
+
+offre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "pidevUserBundle:Offre:delete" }
+    methods:  DELETE
+
+delete_offre:
+    path:    /delete/{id}
+    defaults: { _controller: "pidevUserBundle:Offre:deletevalidation" }
+    methods:  [GET, POST]
+delete_user:
+    path:    /deleteuser/{id}
+    defaults: { _controller: "pidevUserBundle:Offre:deleteUser" }
+    methods:  [GET, POST]

@@ -1,0 +1,38 @@
+{% extends ':admin:baseAdmin.html.twig' %}
+{% block content %}
+    <div class="content container">
+    <div class="row">
+        <div class="col-lg-12">
+                <h2 class="page-title">Bienvenue <small> {{ app.user.username }}</small></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="widget">
+                <div class="widget-header"> <i class="icon-user"></i>
+                    <h3>User Profile</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="body">
+                        <form data-validate="parsley" method="post" novalidate class="form-horizontal label-left" id="user-form">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="text-align-center"> <img style="height: 112px;" alt="64x64" src="{{ asset('/pictures/' ~ app.user.image ~ '')}}" class="img-circle"> </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h3 class="no-margin">{{ app.user.username }}</h3>
+                                    <address>
+                                        <abbr title="Work email">e-mail:</abbr> <a href="mailto:#">{{ app.user.email }}</a><br>
+                                        <abbr title="Work Phone">phone:</abbr> {{ app.user.numTel }}</br>
+                                        <abbr title="Work Phone">Adress:</abbr> {{ app.user.adresse }}
+                                    </address>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

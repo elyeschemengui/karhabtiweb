@@ -1,0 +1,37 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
+    <div style="background-color: #bdbdbd">
+    <br><br><br><br><br><br><br><br>
+
+    <div class="container" style="margin-left: 25%">
+    <div class="row">
+    <h1 style="margin-left: 18%">Changer votre mot de passe</h1>
+
+    <div class="col-sm-8">
+
+    <div class="r-bg">
+    <div align="center">
+{{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+        {{ form_label(form.plainPassword.first) }}
+        <div class="input-lg">
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        {{ form_label(form.plainPassword.second) }}
+        <div class="input-lg">
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div>
+        <br><br>
+        <input type="submit" class="btn btn-lg btn-default" value="{{ 'resetting.reset.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock body %}

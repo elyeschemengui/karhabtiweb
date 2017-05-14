@@ -1,0 +1,7 @@
+public function editProfileAction()
+    {
+        return $this->render('PiBundle::editProfile.html.twig');
+    }
+editProfile:
+    path:     /editProfile
+    defaults: { _controller: PiBundle:Default:editProfile }

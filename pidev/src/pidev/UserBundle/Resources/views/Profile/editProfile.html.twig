@@ -1,0 +1,73 @@
+{% extends '::base.html.twig' %}
+
+
+
+{% block body %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Profile Form Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //for-mobile-apps -->
+    <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('profile/css/j-forms.css')}}">
+    <link href="{{ asset('profile/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+
+
+    <div class="content">
+        <div class="main w3l">
+            <div class="im-g">
+                <img src="{{ asset('profile/images/img1.jpg')}}" alt="">
+            </div>
+            <form class="contact-forms wthree">
+                <!-- end /.header-->
+
+                <!-- start name -->
+                <div class="first-line agileits">
+                    <div class="span6 main-row">
+                        <div class="input">
+
+                            <input type="text" id="first_name" name="username" placeholder="Username" required="">
+                        </div>
+                    </div>
+                </div>
+                <!-- end name -->
+
+                <!-- start email phone -->
+                <div class="first-line agileits">
+                    <div class="span6 main-row">
+                        <div class="input">
+
+                            <input type="email" placeholder="Email" id="email" name="email" required="">
+                        </div>
+                    </div>
+                    <div class="span6 main-row">
+                        <div class="input">
+
+                            <input type="text" placeholder="Phone" id="phone" name="phone" required="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="footer">
+                    <button type="submit" class="primary-btn">Send</button>
+                    <button type="reset" class="secondary-btn">Reset</button>
+                </div>
+                <!-- end /.footer -->
+
+            </form>
+        </div>
+        <p class="copy_rights"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('template/js/jquery.1.11.1.min.js')}}"></script>
+
+    <!--[if lt IE 10]>
+    <![endif]-->
+
+
+{% endblock %}
+
+

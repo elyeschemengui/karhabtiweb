@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="r-bg">
+    <h1>Annonces list</h1>
+
+    <table >
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Titre</th>
+                <th>Validation</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{% if annonce.date %}{{ annonce.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ annonce.TITRE }}</td>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>{% if annonce.VALIDATION %}Yes{% else %}No{% endif %}</td>
+                }{% endif %}
+                <td>{{ annonce.PRIX }}</td>
+                <td><img src="{{asset ('/pictures/' ~ annonce.image ~ '' )}}" style="width: 200px;height: 125px" > </td>
+                <td><img src="{{asset ('/pictures/' ~ annonce.image1 ~ '' )}}" style="width: 200px;height: 125px" > </td>
+
+                <td><img src="{{asset ('/pictures/' ~ annonce.image2 ~ '' )}}" style="width: 200px;height: 125px" > </td>
+                <td><img src="{{asset ('/pictures/' ~ annonce.image3 ~ '' )}}" style="width: 200px;height: 125px" > </td>
+
+
+                <td>
+                    <ul>
+                        <li>
+                            <button class="btn btn-lg btn-success">     <a href="{{ path('annonces_show', { 'id': annonce.ID }) }}">detail</a></button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg btn-success">   <a href="{{ path('annonces_edit', { 'id': annonce.ID }) }}">modifier</a></button>
+                        </li>
+                        <li>
+                            <button class="btn btn-lg btn-warning">   <a href="{{ path('delet_annonce', { 'id': annonce.ID }) }}">suprimer</a></button>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div align="center">
+         <button class="btn btn-lg btn-default">  <a href="{{ path('annonces_new') }}">Create a new annonce</a></button>
+    </div>
+
+            </div></div></div>
+{% endblock %}

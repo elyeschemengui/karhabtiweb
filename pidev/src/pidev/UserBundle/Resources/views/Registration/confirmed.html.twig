@@ -1,0 +1,26 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block body %}
+<div style="background-color: #bdbdbd">
+    <br><br><br><br><br><br><br><br>
+    <div class="container" style="margin-left: 25%">
+        <div class="row">
+            <h1 style="margin-left: 27%">Compte actif</h1>
+
+            <div class="col-sm-8">
+
+                <div class="r-bg">
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <p>{{ 'Félicitation !!!! votre compte est maintenant actif'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+{% endblock fos_user_content %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

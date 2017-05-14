@@ -1,0 +1,28 @@
+a:hover, a:active, a:focus, .navbar .nav > li.selected > a, .theme-color, .footer .list-2 li a:hover, .footer .list-2 li a:focus, .footer .list-3 li a:hover, .footer .list-3 li a:focus, .car-detail-info .title, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, ul.news-box-ul li span.title a:hover, ul.news-box-ul li span.title a:focus, ul.news-box-ul li span.title a:active, #loading i, .search-result-item-content .title a:hover, .search-result-item-content .title a:focus, ul.recent-items-ul li span.title a:hover, ul.recent-items-ul li span.title a:focus, .shop-item-content .title, .shop-item-content .title a:hover, .shop-item-content .title, .shop-item-content .title a:focus, ul.blog-post-tags-ul li a:hover, ul.blog-post-tags-ul li a:focus, .panel-title>a, .panel-title > a.collapsed:hover, .theme-color, ul.tags-ul li a.style-2:before, .social-1 li a:hover  i, .team-position, .blog-boxed h4 a:hover, .related-item-content .title:hover, .related-item-content .title a:hover  {
+  color:#00b4c9;
+}
+
+.navbar .nav > li > ul > li:hover > a, .navbar .nav > li > ul > li.selected > a, .navbar .nav > li > ul > li > ul > li:hover > a, .navbar .nav > li > ul > li > ul > li.selected > a, .btn-default, .nav-tabs>li>a,  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li:hover > a, .progress-bar, .irs-bar, .irs-slider, #irs-active-slider, .irs-slider:hover, .irs-from, .irs-to, .irs-single, ul.tags-ul li a.style-2, .services-2-icon i, .hero-unit, .dropdown-menu, .promo-video a.promo-video-link, .promo-box  {
+  background-color:#00b4c9; 
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default, .btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled.focus, .btn-default[disabled].focus, fieldset[disabled] .btn-default.focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active, a.back-to-top:hover   {
+  background-color:rgba(0,180,201,0.8); 
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li:hover > a, .nav-pills > li.active + li a, .nav-pills > li:hover + li a  {
+  border-color:#00b4c9;
+}
+
+.nav-pills > li.active > a:after, .nav-pills > li.active > a:after:hover, .nav-pills > li.active > a:after:focus, .nav-pills > li:hover > a:after, .nav-pills > li:last-child.active > a:after, .nav-pills > li:last-child.active > a:after:hover, .nav-pills > li:last-child.active > a:after:focus, .nav-pills > li:last-child:hover > a:after {
+  border-color: transparent transparent transparent #00b4c9;
+}
+
+.navbar .nav>li>a:focus, .navbar .nav>li>a:hover, .navbar .nav>li>a:hover ul, .navbar .nav > li:hover > a {
+  color:#00b4c9;
+  opacity:0.7;
+}
+
+.promo-video {
+  background-color:rgba(0,180,201,0.7); 
+}

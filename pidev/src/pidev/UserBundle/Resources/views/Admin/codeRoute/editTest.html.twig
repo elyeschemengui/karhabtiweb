@@ -1,0 +1,135 @@
+{% extends ':admin:baseAdmin.html.twig' %}
+{% block content %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-title">Test<small> num {{ code.id }}</small></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="widget">
+                    <div class="widget-header"> <i class="icon-user"></i>
+                        <h3>Test num</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div class="body">
+                            <form data-validate="parsley" method="post" novalidate class="form-horizontal label-left" id="user-form">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="text-align-center"> <img style="height: 112px;" alt="64x64" src="{{asset ('/pictures/' ~ code.image ~ '')}}" class="img-circle"> </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3 class="no-margin">Niveau{{ code.niveau }}</h3>
+
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <legend>Si vous voulez modifier le test <small> &nbsp;&nbsp;&nbsp; modifier les champs </small></legend>
+                                </fieldset>
+                                <fieldset>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Niveau</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix" id="last-name"value="{{ code.niveau }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Question</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix" id="last-name"value="{{ code.question }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Choix1</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix1" id="last-name"value="{{ code.choix1 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Choix2</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix2" id="last-name"value="{{ code.choix2 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Choix3</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix3" id="last-name"value="{{ code.choix3 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Choix4</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix4" id="last-name"value="{{ code.choix4 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Choix5</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="choix5" id="last-name"value="{{ code.choix5 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Reponse</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="col-xs-12 parsley-validated" required name="reponse" id="last-name"value="{{ code.reponse }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="col-md-3">
+                                            <label for="last-name" class="control-label">Image</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="file" name="image">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <div class="form-actions">
+                                    <button class="btn btn-primary" type="submit">Valider &amp; Enregistrer</button>
+                                    <button class="btn btn-default" type="button">Annuler</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

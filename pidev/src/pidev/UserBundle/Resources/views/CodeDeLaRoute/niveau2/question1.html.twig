@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <form method="post" >
+
+        {% for f in test   %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 car-detail-container">
+
+                        <div class="slider-carousel flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img  src="{{asset ('/pictures/' ~ f.image ~ '')}}"  alt=""/>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="title">
+                            <p>{{ f.question }}</p>
+                        </div>
+
+                        <p class="info-text">
+
+                        <ul>
+                            <li><input type="radio" value="1" name="{{ f.id }}">{{ f.choix1 }}</li>
+                            <li><input type="radio" value="2" name="{{ f.id }}">{{ f.choix2 }}</li>
+                            {% if f.choix3 is not null %}
+                                <li><input type="radio" value="3" name="{{ f.id }}">{{ f.choix3 }}</li>
+                            {% endif %}
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        {% endfor %}
+        <button type="submit" class="btn btn-warning" style="margin-left: 867px;">valider</button>
+
+    </form>
+{% endblock %}
+

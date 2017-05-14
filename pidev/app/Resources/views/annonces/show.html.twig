@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="container">
+    <div class="row">
+        <div class="r-bg">
+    <h1>Annonce</h1>
+
+    <table>
+        <tbody>
+
+            <tr>
+                <th>Date</th>
+                <td>{% if annonce.date %}{{ annonce.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ annonce.TITRE }}</td>
+            </tr>
+            <tr>
+                <th>Nombre_de_cylindres</th>
+                <td>{{ annonce.NOMBREDECYLINDRES }}</td>
+            </tr>
+            <tr>
+                <th>Energie</th>
+                <td>{{ annonce.ENERGIE }}</td>
+            </tr>
+            <tr>
+                <th>Puissance_fiscale</th>
+                <td>{{ annonce.PUISSANCEFISCALE }}</td>
+            </tr>
+            <tr>
+                <th>Cylindree</th>
+                <td>{{ annonce.CYLINDREE }}</td>
+            </tr>
+            <tr>
+                <th>Boite</th>
+                <td>{{ annonce.BOITE }}</td>
+            </tr>
+            <tr>
+                <th>Descripition</th>
+                <td>{{ annonce.DESCRIPITION }}</td>
+            </tr>
+            <tr>
+                <th>Validation</th>
+                <td>{% if annonce.VALIDATION %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ annonce.PRIX }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{asset ('/pictures/' ~ annonce.image ~ '' )}}"  style="width: 200px;height: 125px" > </td>
+            </tr>
+            <tr>
+                <th>Image1</th>
+                <td><img src="{{asset ('/images/' ~ annonce.image1~ '')}}"  style="width: 200px;height: 125px"> </td>
+            </tr>
+            <tr>
+                <th>Image2</th>
+                <td><img src="{{asset ('/images/' ~ annonce.image2 ~ '')}}"  style="width: 200px;height: 125px"> </td>
+            </tr>
+            <tr>
+                <th>Image3</th>
+                <td><img src="{{asset ('/images/' ~ annonce.image3 ~ '')}}"  style="width: 200px;height: 125px"> </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+            <button class="btn btn-lg btn-default"> <a href="{{ path('annonces_index') }}">retoure a la liste</a></button>
+
+            <button class="btn btn-lg btn-default"> <a href="{{ path('annonces_edit', { 'id': annonce.ID }) }}">modifier</a></button>
+            <button class="btn btn-lg btn-danger"> <a href="{{ path('delet_annonce', { 'id': annonce.ID }) }}">suprimer</a></button>
+
+
+
+        </div></div></div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div style="background-color: #bdbdbd">
+    <br><br><br><br><br><br><br><br>
+<div class="container" style="margin-left: 300px">
+    <H1><div style="margin-left: 25%">VOTRE PROFIL</div></H1>
+    <div class="row">
+
+        <div class="col-sm-8">
+    <div class="r-bg" style="margin-left: 2.5%">
+
+
+        <div style="float: right">
+            <img  src="{{asset ('/pictures/' ~ app.user.image ~ '')}}"  width="300"><br>
+            <a href="{{ path('home') }}" >Mes annonces</a><br>
+            <a href="{{ path('home') }}">Mes Points de ventes</a><br>
+            <a href="{{ path('offre2_index') }}">Mes Offres</a><br>
+            <a href="{{ path('fos_user_profile_edit') }}"> Modifier mon profil </a><br>
+            <a href="{{ path('fos_user_change_password') }}">Modifier mot de passe</a>
+
+        </div>
+
+            <h3 style="padding-left: 25px">Bienvenue {{ user.username }}</h3>
+
+
+                <div class="title" style="padding-left: 25px">Nom d'utilisateur: {{ user.username }} </div>
+                <ul class="car-detail-info-list">
+                    <li style="padding-left: 25px"><strong>Email : </strong>{{ user.email }}    </li>
+                    <li style="padding-left: 25px"><strong>Num tel : </strong>{{ user.numTel }}</li>
+                    <li style="padding-left: 25px"><strong>Adresse:</strong>{{ user.adresse }}</li>
+                    <li style="padding-left: 25px"><strong>Code Postale:</strong>{{ user.codePostal }}</li>
+
+
+                </ul>
+
+        </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div style="background-color: dimgrey" xmlns="http://www.w3.org/1999/html">
+    <div style="margin-right: 7.5%">
+
+
+    <div style="margin-left: 8%">
+        <div class="spacer60"></div>
+        <br><br><br><br>
+
+        <div class="r-bg">
+    <h1>Offre {{ offre.nomOffre }}</h1>
+            <ul>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {% if offre.membreId.id == app.user.id %}
+                <a href="{{ path('offre_edit', { 'id': offre.id }) }}" >Modifier l'offre</a>
+                        {% endif %}
+                {% endif %}
+                    <a href="{{ path('offre_index') }}" style="margin-left: 70%;font-size: medium">Toute les offres</a>
+
+
+
+
+            </ul>
+
+    <table>
+        <tbody>
+
+            <tr>
+                <th>Nom offre</th>
+                <td>{{ offre.nomOffre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ offre.description }}</td>
+            </tr>
+            <tr>
+                <th>Nom Point de vente</th>
+                <td>{{ offre.ptventeId.nom }}
+
+                </td>
+            </tr>
+            <tr>
+                <th>Prix initial</th>
+                <td><strike><h3 style="color: red;"> {{ offre.prixinit }} DT</h3></strike>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Prix aprés remise</th>
+                <td><h1 style="color: dodgerblue"> {{ offre.prixinit-(offre.prixinit*(offre.tauxRemise/100)) }} DT</h1>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Photo</th>
+
+                <td><img src="{{asset ('/pictures/' ~ offre.photo  ~ '')}}" width="200" ></td>
+            </tr><br>
+            <tr>
+                <th></th>
+                <th>{{ socialButtons() }}</th>
+            </tr>
+
+        </tbody>
+    </table>
+            <ul style="margin-left: 800px">
+
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {% if offre.membreId.id == app.user.id  %}
+                    {{ form_start(delete_form) }}
+                    <input type="submit" class="btn btn-default btn-lg" value="Supprimer">
+
+                    {{ form_end(delete_form) }}
+                        {% endif %}
+                    {% endif %}
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div>
+        l
+    </div>
+        </div>
+    </div>
+
+{% endblock %}

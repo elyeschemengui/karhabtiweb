@@ -1,0 +1,54 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+<div style="width: 45%;margin-bottom: -31%">
+    {{ form_label(form.email) }}
+    <div class="input-lg">
+    {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Votre e-mail'} }) }}
+    </div>
+
+    {{ form_label(form.username) }}
+<div class="input-lg">
+    {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Nom utilisateur ','minlength': '5'} }) }}
+</div>
+    {{ form_label(form.numTel) }}
+<div class="input-lg">
+    {{ form_widget(form.numTel, { 'attr': {'class': 'form-control', 'placeholder': 'Numéro téléphone','minlength': '8'} }) }}
+</div>
+</div>
+<div style="margin-left: 50%;width: 45%;margin-bottom: -10%">
+          {{ form_label(form.adresse) }}
+                <div class="input-lg">
+                    {{ form_widget(form.adresse, { 'attr': {'class': 'form-control', 'placeholder': 'Votre adresse'} }) }}
+                </div>
+            {{ form_label(form.codePostal) }}
+            <div class="input-lg">
+              {{ form_widget(form.codePostal, { 'attr': {'class': 'form-control', 'placeholder': 'Code postal'} }) }}
+            </div>
+
+    {{ form_label(form.plainPassword.first) }}
+    <div class="input-lg">
+           {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control','minlength': '8'} }) }}
+
+            </div>
+    {{ form_label(form.plainPassword.second) }}
+    <div class="input-lg">
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control','minlength': '8'} }) }}
+    </div>
+</div>
+<br><br><br><br>
+
+<div>
+
+    <label for="exampleInputFile"></label>
+    {{ form_widget(form.image) }}
+
+</div>
+<br><br><br><br>
+    <div align="center">
+        <input type="submit" class="btn btn-default btn-lg" value="{{ 'Inscrire'|trans }}" />
+    </div>
+
+
+{{ form_end(form) }}

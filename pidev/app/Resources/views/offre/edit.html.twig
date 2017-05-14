@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div style="background-color: dimgrey">
+    <div style="margin-right: 8%;">
+    <div style="margin-left: 10%;">
+        <div class="spacer60"></div>
+        <br><br><br><br>
+        <div class="r-bg">
+    <h1>Offre edit</h1><a href="{{ path('offre2_index') }}" style="float: right"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>  Mes offres</a><br><br><a href="{{ path('offre_index') }}" style="float: right">Toute les offres <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </a>
+
+    {{ form_start(edit_form) }}
+            <div style="width: 50%;margin-bottom: -27%">
+                {{ form_label(edit_form.nomOffre) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.nomOffre, {'attr': { 'placeholder': 'Nom offre' } }) }}
+                </div>
+                {{ form_label(edit_form.ptventeId) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.ptventeId) }}
+                </div>
+                {{ form_label(edit_form.prixinit) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.prixinit, { 'attr': {  'placeholder': 'Prix initial' } }) }}
+                </div>
+                {{ form_label(edit_form.tauxRemise) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.tauxRemise, { 'attr': { 'placeholder': 'Taux de remise %'} }) }}
+                </div>
+            </div>
+            <div style="width: 50%;float: right;margin-bottom: 10%">
+                {{ form_label(edit_form.description) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.description, { 'attr': {'class': 'form-control', 'placeholder': 'Description de loffre'} }) }}
+                </div><br><br><br><br>
+                {{ form_label(edit_form.photo) }}
+                <div class="input-lg">
+                    {{ form_widget(edit_form.photo) }}
+                </div>
+            </div>        <input type="submit" class="btn btn-default btn-lg" value="Valider" style="margin-left: 51%"/>
+    {{ form_end(edit_form) }}
+
+
+
+
+                    {{ form_start(delete_form) }}
+                    <input type="submit" class="btn btn-default btn-lg" value="Supprimer" style="margin-left: 50%">
+                    {{ form_end(delete_form) }}
+
+
+</div>
+        </div>
+    <div>
+        l
+    </div>
+            </div>
+    </div>
+{% endblock %}

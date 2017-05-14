@@ -1,0 +1,59 @@
+{% extends ':admin:baseAdmin.html.twig' %}
+{% block content %}
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-title">Static Tables <small>Different variations</small></h2>
+             <div style="float: left"> <button class="btn btn-sm btn-primary"><a href="{{ path('ex' )}}">exporter les annonces en excel</a> </button></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="widget">
+                    <div class="widget-header"> <i class="icon-table"></i>
+                        <h3>Table</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div class="body">
+                            <table class="table table-striped table-images">
+                                <thead>
+                                <tr>
+                                    <th>image</th>
+                                    <th>Id</th>
+                                    <th>Id_User</th>
+                                    <th>Titre</th>
+                                    <th class="hidden-xs">Date</th>
+                                    <th class="hidden-xs">Prix</th>
+                                    <th class="hidden-xs">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for annonce in annonces %}
+                                <tr>
+
+                                    <td><img src="{{asset ('/images/' ~ annonce.image ~ '')}}"></td>
+                                    <td> <a href="{{ path('annonces_show', { 'id': annonce.ID }) }}">{{ annonce.ID }}</a> </td>
+                                    <td> {{ annonce.user.id }} </td>
+                                    <td> {{ annonce.tITRE }} </td>
+                                    <td class="hidden-xs"> {% if annonce.date %}{{ annonce.date|date('Y-m-d') }}{% endif %} </td>
+                                    <td> {{ annonce.pRIX }} </td>
+                                    <td class="hidden-xs"><button class="btn btn-sm btn-primary"><a href="{{ path('show_admin', { 'id': annonce.ID }) }}">show</a> </button>
+                                    <td class="hidden-xs"><button class="btn btn-sm btn-warning"><a href="{{ path('annoce_delete', { 'id': annonce.ID }) }}}">delete</a> </button>
+                                </tr>
+{% endfor %}
+
+                                </tbody>
+                            </table>
+                            {{ knp_pagination_render(annonces) }}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}

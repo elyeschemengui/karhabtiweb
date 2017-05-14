@@ -1,0 +1,30 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: pidev
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: headevelopers@gmail.com
+    mailer_password: '123456*/'
+    secret: ThisTokenIsNotSoSecretChangeIt
+    totalNv1: 0
+    temptotNv1: 0
+    temptot2Nv1: 0
+    totalNv2: 0
+    temptotNv2: 0
+    temptot2Nv2: 0
+    totalNv3: 0
+    temptotNv3: 0
+    temptot2Nv3: 0
+    totalNv4: 0
+    temptotNv4: 0
+    temptot2Nv4: 0
+    totalNv5: 0
+    temptotNv5: 0
+    temptot2Nv5: 0
+    totalNv6: 0
+    temptotNv6: 0
+    temptot2Nv6: 0

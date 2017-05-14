@@ -1,0 +1,13 @@
+pidev_user:
+    resource: "@pidevUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+code_route:
+    resource: "@pidevUserBundle/Resources/config/codeNiveau/code.yml"
+niveau_un:
+    resource: "@pidevUserBundle/Resources/config/codeNiveau/niveau1.yml"
